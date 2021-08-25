@@ -27,14 +27,10 @@ class SeleniumBaseCase(unittest.TestCase):
 
     def tearDown(self) -> None:
         # 断言失败截图
+        self.base_page.wait(1)
         errors = self._outcome.errors
         for test, exc_info in errors:
             if exc_info:
                 self.base_page.wait()
                 self.base_page.screen_shot_path_as_file()
-        self.base_page.wait(2)
         self.base_page.quit_browser()
-
-    # @classmethod
-    # def tearDownClass(cls) -> None:
-    #     logger.info("======测试类结束======")
