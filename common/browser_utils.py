@@ -42,7 +42,7 @@ class BrowserUtils:
         chrome_options.add_argument('lang=zh_CN.UTF-8')  # 设置默认编码为utf-8
         chrome_options.add_experimental_option('useAutomationExtension', False)  # 取消chrome受自动控制提示
         chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])  # 取消chrome受自动控制提示
-        chrome_driver_path = os.path.join(self.driver_path, 'chromedriver')
+        chrome_driver_path = os.path.join(self.driver_path, 'chromedriver.exe')
         driver = webdriver.Chrome(executable_path=chrome_driver_path, options=chrome_options)
         logger.info('初始化Google浏览器并启动')
         return driver
