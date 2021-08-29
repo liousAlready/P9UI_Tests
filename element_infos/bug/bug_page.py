@@ -4,7 +4,7 @@
 # @File : bug_page
 
 
-from common.element_data_utils_02 import ElementDataUtils
+from common.element_data_utils import ElementDataUtils
 from common.config_utils import local_config
 from common.log_utils import logger
 from common.base_page import BasePage
@@ -15,7 +15,7 @@ class BugPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-        elements = ElementDataUtils('bug').get_element_infos('bug_page')
+        elements = ElementDataUtils('bug', 'bug_page').get_element_infos()
 
         self.test_link = elements['test_link']
         self.bug_link = elements['bug_link']

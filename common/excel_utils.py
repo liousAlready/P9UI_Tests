@@ -58,8 +58,9 @@ class ExcelUtils:
 
 
 if __name__ == "__main__":
-    current_path = os.path.dirname(__file__)
-    excel_path = os.path.join(current_path, '..', local_config.test_data_path)
-    ex = ExcelUtils(excel_path, 'login_suite').get_sheet_data_by_list()
-    for i in ex:
-        print(i)
+    # current_path = os.path.dirname(__file__)
+    # excel_path = os.path.join(current_path, '..', local_config.test_data_path)
+    # ex = ExcelUtils(excel_path, 'login').get_sheet_data_by_list()
+    # for i in ex:
+    #     print(i)
+    pass

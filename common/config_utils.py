@@ -68,14 +68,55 @@ class ConfigUtils:
         return test_data_path
 
     @property
+    def test_path(self):
+        test_data_path = self.cfg.get("DEFAULT", "test_path")
+        return test_data_path
+
+    @property
     def case_path(self):
         case_path = self.cfg.get("DEFAULT", "case_path")
         return case_path
 
     @property
+    def element_info_path(self):
+        element_info_path = self.cfg.get("DEFAULT", "element_path")
+        return element_info_path
+
+
+    @property
     def report_path(self):
-        report_path = self.cfg.get("DEFAULT", "report_path")
+        report_path = self.cfg.get("REPORTS", "REPORTS_PATH")
         return report_path
+
+    @property
+    def smtp_server(self):
+        smtp_server = self.cfg.get("email", "smtp_server")
+        return smtp_server
+
+    @property
+    def smtp_sender(self):
+        smtp_sender = self.cfg.get("email", "smtp_sender")
+        return smtp_sender
+
+    @property
+    def smtp_sender_password(self):
+        smtp_sender_password = self.cfg.get("email", "smtp_sender_password")
+        return smtp_sender_password
+
+    @property
+    def smtp_receiver(self):
+        smtp_receiver = self.cfg.get("email", "smtp_receiver")
+        return smtp_receiver
+
+    @property
+    def smtp_cc(self):
+        smtp_cc = self.cfg.get("email", "smtp_cc")
+        return smtp_cc
+
+    @property
+    def smtp_subject(self):
+        smtp_subject = self.cfg.get("email", "smtp_subject")
+        return smtp_subject
 
 
 local_config = ConfigUtils()
@@ -83,4 +124,4 @@ local_config = ConfigUtils()
 if __name__ == "__main__":
     print(local_config.get_url)
     print(local_config.report_path)
-    print(local_config.case_path)
+    print(local_config.test_path)

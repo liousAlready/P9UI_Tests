@@ -10,7 +10,7 @@ import time
 
 from common.log_utils_old import logger
 from common.base_page import *
-from common.element_data_utils_02 import *
+from common.element_data_utils_02 import ElementDataUtils
 from common.browser_utils import *
 
 

@@ -5,8 +5,8 @@
 # @File    : quit_action.py
 # @Software: PyCharm
 
-from element_infos.main_page import MainPage
-from element_infos.login_page import LoginPage
+from element_infos.main.main_page import MainPage
+from element_infos.login.login_page import LoginPage
 
 
 class QuitAction:

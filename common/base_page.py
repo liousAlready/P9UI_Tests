@@ -109,7 +109,7 @@ class BasePage:
         '''
         locator_type = element_infos["locator_type"]
         locator_value = element_infos["locator_value"]
-        locator_timeout = element_infos["timeout"]
+        locator_timeout = element_infos["time_out"]
         try:
             if locator_type == "name":
                 locator_type = By.NAME

@@ -8,8 +8,8 @@
 
 # 登录页面功能操作
 
-from element_infos.login_page import LoginPage
-from element_infos.main_page import MainPage
+from element_infos.login.login_page_new import LoginPage
+from element_infos.main.main_page import MainPage
 from common.config_utils import local_config
 
 

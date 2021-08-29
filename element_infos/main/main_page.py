@@ -9,8 +9,8 @@
 import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from element_infos.login_page import LoginPage
-from common.element_data_utils_02 import ElementDataUtils
+from element_infos.login.login_page import LoginPage
+from common.element_data_utils import ElementDataUtils
 from common.log_utils_old import logger
 from common.base_page import BasePage
 from common.browser_utils import BrowserUtils
@@ -22,7 +22,7 @@ class MainPage(BasePage):
         BasePage.__init__(self, driver)
 
         # 创建excel读取对象，通过字典来进行数据读取
-        elements = ElementDataUtils('main').get_element_infos("main_page")
+        elements = ElementDataUtils('main', 'main_page').get_element_infos()
         self.my_zone_link = elements["my_zone_link"]
         self.user_menu = elements["user_menu"]
         self.quit_button = elements["quit_button"]
