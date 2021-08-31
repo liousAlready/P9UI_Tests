@@ -7,23 +7,27 @@
 
 
 import unittest
-from common.config_utils import local_config
-from element_infos.login.login_page import LoginPage
-from common.browser_utils import BrowserUtils
 from action.login_action import LoginAction
 from action.quit_action import QuitAction
-from common.base_page import BasePage
 from common.selenium_base_case import SeleniumBaseCase
+from common.test_data_utils import TestDataUtils
 
 
 class MainCase(SeleniumBaseCase):
+    test_class_data = TestDataUtils("main_suite", "main_case").convert_excel_data_test_data()
 
+    def setUp(self) -> None:
+        super().setUp()
+        main_page = LoginAction(self.base_page.driver).login_default()
+        self.main = QuitAction(main_page.driver)
+        return self.main
+
+    @unittest.skipIf(test_class_data['test_quit']['is_not'], '条件为真则跳过，如果为假则执行')
     def test_quit(self):
-        login_action = LoginAction(self.base_page.driver)
-        main_page = login_action.login_default()
-        main = QuitAction(main_page.driver)
-        result = main.quit()
-        self.assertIn("新梦想项目管理平台项目管理系统", result, "测试失败")
+        test_function_data = self.test_class_data['test_quit']
+        self._testMethodDoc = test_function_data['test_name'] + str(test_function_data['is_not'])  # testMethodDoc测试备注
+        result = self.main.quit()
+        self.assertIn(test_function_data['excepted_result'], result, "测试失败")
 
 
 if __name__ == "__main__":

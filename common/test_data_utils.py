@@ -43,6 +43,6 @@ class TestDataUtils:
 
 if __name__ == "__main__":
     information = TestDataUtils("login_suite", "login_case", "LoginCase").convert_excel_data_test_data()
-    ins = TestDataUtils('login_suite','login_case').convert_excel_data_test_data()
+    ins = TestDataUtils("bug_suite", "bug_case").convert_excel_data_test_data()
     for i in ins.values():
         print(i)

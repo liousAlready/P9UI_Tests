@@ -27,5 +27,3 @@ class LogUtils:
 
 
 logger = LogUtils().get_logger()
-
-logger.info("傻逼 ")
