@@ -24,7 +24,8 @@ class BugTest(SeleniumBaseCase):
     def test_commit_bug(self):
         test_function_data = self.test_class_data['test_commit_bug']
         self._testMethodDoc = test_function_data['test_name'] + str(test_function_data['is_not'])  # testMethodDoc测试备注
-        result = self.bug.commit_bug(test_function_data['test_parameter'].get('title'), "这就是bug呀")
+        result = self.bug.commit_bug(test_function_data['test_parameter'].get('title'),
+                                     test_function_data['test_parameter'].get('content'))
         self.assertIn(test_function_data['test_parameter'].get('title'), result, "test_commit_bug--失败")
 
 
